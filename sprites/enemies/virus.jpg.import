@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/virus.jpg-0cd4afe53bf7f5cd0b489ac037703a88.stex"
+path="res://.import/virus.jpg-18713e01eb5908623147952fac8c7a7c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/virus.jpg"
-dest_files=[ "res://.import/virus.jpg-0cd4afe53bf7f5cd0b489ac037703a88.stex" ]
+source_file="res://sprites/enemies/virus.jpg"
+dest_files=[ "res://.import/virus.jpg-18713e01eb5908623147952fac8c7a7c.stex" ]
 
 [params]
 
