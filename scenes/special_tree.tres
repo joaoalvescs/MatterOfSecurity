@@ -3,7 +3,7 @@
 [ext_resource path="res://sprites/objects/Tree_3.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 77, 1110 )
+extents = Vector2( 30, 1110 )
 
 [resource]
 0/name = "special_tree"
@@ -19,6 +19,6 @@ extents = Vector2( 77, 1110 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 1 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 147, -834.5 )
+"shape_transform": Transform2D( 1, 0, 0, 1, 146, -834.5 )
 } ]
 0/z_index = 0
