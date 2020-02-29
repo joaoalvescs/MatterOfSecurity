@@ -1,0 +1,37 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://sprites/enemies/virus3.png" type="Texture" id=1]
+[ext_resource path="res://sprites/enemies/virus2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemies/virus5.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemies/virus1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemies/virus4.png" type="Texture" id=5]
+[ext_resource path="res://sprites/enemies/virus7.png" type="Texture" id=6]
+[ext_resource path="res://sprites/enemies/virus6.png" type="Texture" id=7]
+[ext_resource path="res://scenes/enemy.gd" type="Script" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 20.0821
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "move",
+"speed": 5.0
+} ]
+
+[node name="enemy" type="StaticBody2D"]
+collision_layer = 4
+script = ExtResource( 8 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+position = Vector2( 197.798, 102.483 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 174.145, 77.7018 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 2 )
+animation = "move"
+frame = 6
+centered = false

@@ -31,3 +31,6 @@ func _physics_process(_delta):
 				
 	motion = move_and_slide(motion, UP)
 	pass
+
+func _on_feet_body_entered(body):
+	body.dano()
