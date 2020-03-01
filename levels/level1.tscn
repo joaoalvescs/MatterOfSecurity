@@ -372,20 +372,20 @@ centered = false
 [node name="gamepad" type="Node2D" parent="Hud"]
 
 [node name="left" type="TouchScreenButton" parent="Hud/gamepad"]
-position = Vector2( 38.9488, 431.254 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 43.3594, 423.871 )
+scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 19 )
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="Hud/gamepad"]
-position = Vector2( 120.411, 430.901 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 129.714, 423.473 )
+scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 20 )
 action = "ui_right"
 
 [node name="up" type="TouchScreenButton" parent="Hud/gamepad"]
-position = Vector2( 839.609, 421.287 )
-scale = Vector2( 0.2, 0.2 )
+position = Vector2( 627.121, 410.048 )
+scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 21 )
 action = "ui_up"
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]
