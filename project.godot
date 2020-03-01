@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Matter Of Security"
+config/name="Virtual Jumpers"
 run/main_scene="res://levels/level1.tscn"
 config/icon="res://icon.png"
 
