@@ -104,10 +104,11 @@ position = Vector2( 16, 16 )
 shape = SubResource( 6 )
 
 [node name="river" type="Sprite" parent="."]
-position = Vector2( 272, 16 )
+position = Vector2( 272, 15.0975 )
 texture = ExtResource( 2 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="river"]
+[node name="StaticBody2D" type="RigidBody2D" parent="river"]
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="river/StaticBody2D"]
 position = Vector2( -0.211915, 23.0434 )
