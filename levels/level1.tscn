@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://sprites/run/run1.png" type="Texture" id=2]
@@ -21,12 +21,16 @@
 [ext_resource path="res://sprites/buttons/left.png" type="Texture" id=19]
 [ext_resource path="res://sprites/buttons/right.png" type="Texture" id=20]
 [ext_resource path="res://sprites/buttons/up.png" type="Texture" id=21]
+[ext_resource path="res://sprites/enemies/spam1.png" type="Texture" id=22]
+[ext_resource path="res://sprites/enemies/spam2.png" type="Texture" id=23]
+[ext_resource path="res://sprites/enemies/backdoor.png" type="Texture" id=24]
+[ext_resource path="res://levels/backdoor.gd" type="Script" id=25]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ) ],
 "loop": true,
-"name": "Idle",
+"name": "Run",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 6 ) ],
@@ -34,9 +38,9 @@ animations = [ {
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "Run",
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -53,6 +57,28 @@ radius = 20.0821
 animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 17 ) ],
 "loop": true,
+"name": "move",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 45.5029, 37.7769 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "move",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 217.955, 82.6879 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ ExtResource( 24 ) ],
+"loop": false,
 "name": "move",
 "speed": 5.0
 } ]
@@ -84,7 +110,7 @@ tile_data = PoolIntArray( 327681, 0, 0, 327764, 536870912, 0 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background1"]
 
 [node name="Sprite" type="Sprite" parent="parallax_background1/ParallaxLayer"]
-position = Vector2( 1484.78, -52.1557 )
+position = Vector2( 1491.9, -46.8394 )
 scale = Vector2( 0.995444, 1.02642 )
 texture = ExtResource( 9 )
 
@@ -127,246 +153,6 @@ collision_mask = 4
 position = Vector2( -21.2126, 387.868 )
 shape = SubResource( 3 )
 
-[node name="enemy" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy"]
-position = Vector2( 384.414, 71.7896 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy"]
-position = Vector2( 361.574, 46.315 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy2" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy2"]
-position = Vector2( 1051.02, 44.514 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy2"]
-position = Vector2( 1024.16, 21.3949 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy3" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy3"]
-position = Vector2( 484.168, 264.009 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy3"]
-position = Vector2( 460.506, 238.347 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy4" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy4"]
-position = Vector2( 773.168, 137.009 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy4"]
-position = Vector2( 750.506, 112.348 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy5" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy5"]
-position = Vector2( 1467.68, -51.4053 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy5"]
-position = Vector2( 1442.84, -76.3603 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy6" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy6"]
-position = Vector2( 1051.96, 232.012 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy6"]
-position = Vector2( 1026.6, 208.907 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy7" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy7"]
-position = Vector2( 1466.91, 137.162 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy7"]
-position = Vector2( 1442.5, 112.665 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy8" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy8"]
-position = Vector2( 1928.98, 170.246 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy8"]
-position = Vector2( 1907.86, 146.333 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy9" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy9"]
-position = Vector2( 2375.72, 265.836 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy9"]
-position = Vector2( 2351.16, 242.289 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy10" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy10"]
-position = Vector2( 1879.81, -85.3744 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy10"]
-position = Vector2( 1858.26, -108.921 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy11" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy11"]
-position = Vector2( 763.949, -216.013 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy11"]
-position = Vector2( 740.739, -239.56 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy12" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy12"]
-position = Vector2( 1106.78, -221.287 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy12"]
-position = Vector2( 1085.32, -243.076 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy13" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy13"]
-position = Vector2( 1495.78, -212.241 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy13"]
-position = Vector2( 1473.86, -239.56 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy14" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy14"]
-position = Vector2( 469.585, -85.7881 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy14"]
-position = Vector2( 444.267, -110.569 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
-[node name="enemy15" type="StaticBody2D" parent="."]
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="enemy15"]
-position = Vector2( 2394.87, 36.1864 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="enemy15"]
-position = Vector2( 2371.39, 14.379 )
-scale = Vector2( 0.1, 0.1 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 6
-centered = false
-
 [node name="Hud" type="CanvasLayer" parent="."]
 
 [node name="gamepad" type="Node2D" parent="Hud"]
@@ -388,4 +174,172 @@ position = Vector2( 627.121, 410.048 )
 scale = Vector2( 0.25, 0.25 )
 normal = ExtResource( 21 )
 action = "ui_up"
+
+[node name="enemy" type="StaticBody2D" parent="."]
+position = Vector2( 118.6, -36.4966 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="enemy"]
+position = Vector2( 365.077, 301.411 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="enemy"]
+position = Vector2( 341.666, 277.857 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 6
+centered = false
+
+[node name="enemy3" type="StaticBody2D" parent="."]
+position = Vector2( 118.6, -36.4966 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="enemy3"]
+position = Vector2( 1350.01, 178.271 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="enemy3"]
+position = Vector2( 1325.73, 152.993 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 6
+centered = false
+
+[node name="enemy2" type="StaticBody2D" parent="."]
+position = Vector2( 118.6, -36.4966 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="enemy2"]
+position = Vector2( 932.075, 79.4118 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="enemy2"]
+position = Vector2( 908.207, 53.2425 )
+scale = Vector2( 0.1, 0.1 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 6
+centered = false
+
+[node name="spam" type="StaticBody2D" parent="."]
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam"]
+position = Vector2( 26.062, -26.7076 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam"]
+position = Vector2( 1.48422, -51.2665 )
+frames = SubResource( 7 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="spam2" type="StaticBody2D" parent="."]
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam2"]
+position = Vector2( 730.817, -213.433 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam2"]
+position = Vector2( 706.527, -243.071 )
+frames = SubResource( 7 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="spam3" type="StaticBody2D" parent="."]
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 11 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam3"]
+position = Vector2( 27.9238, -373.687 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam3"]
+position = Vector2( 2.86432, -401.745 )
+frames = SubResource( 7 )
+animation = "move"
+playing = true
+centered = false
+
+[node name="backdoor" type="StaticBody2D" parent="."]
+position = Vector2( 248.71, 345.179 )
+collision_layer = 4
+script = ExtResource( 25 )
+
+[node name="Shape" type="CollisionShape2D" parent="backdoor"]
+position = Vector2( 152.338, -268.188 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="backdoor"]
+position = Vector2( 152.3, -267.721 )
+scale = Vector2( 0.0708184, 0.0727675 )
+frames = SubResource( 9 )
+animation = "move"
+
+[node name="backdoor4" type="StaticBody2D" parent="."]
+position = Vector2( 248.71, 345.179 )
+collision_layer = 4
+script = ExtResource( 25 )
+
+[node name="Shape" type="CollisionShape2D" parent="backdoor4"]
+position = Vector2( 2135.27, -73.8823 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="backdoor4"]
+position = Vector2( 2135.51, -73.1968 )
+scale = Vector2( 0.0708184, 0.0727675 )
+frames = SubResource( 9 )
+animation = "move"
+
+[node name="backdoor3" type="StaticBody2D" parent="."]
+position = Vector2( 248.71, 345.179 )
+collision_layer = 4
+script = ExtResource( 25 )
+
+[node name="Shape" type="CollisionShape2D" parent="backdoor3"]
+position = Vector2( 1655.48, -424.213 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="backdoor3"]
+position = Vector2( 1653.84, -426.509 )
+scale = Vector2( 0.0708184, 0.0727675 )
+frames = SubResource( 9 )
+animation = "move"
+
+[node name="backdoor2" type="StaticBody2D" parent="."]
+position = Vector2( 248.71, 345.179 )
+collision_layer = 4
+script = ExtResource( 25 )
+
+[node name="Shape" type="CollisionShape2D" parent="backdoor2"]
+position = Vector2( 820.479, -107.524 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 8 )
+
+[node name="Sprite" type="AnimatedSprite" parent="backdoor2"]
+position = Vector2( 820.574, -106.848 )
+scale = Vector2( 0.0708184, 0.0727675 )
+frames = SubResource( 9 )
+animation = "move"
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/virus.jpg-18713e01eb5908623147952fac8c7a7c.stex"
+path="res://.import/keyloggers.png-73cdd008202addb947c5876a026ddee2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/enemies/virus.jpg"
-dest_files=[ "res://.import/virus.jpg-18713e01eb5908623147952fac8c7a7c.stex" ]
+source_file="res://sprites/enemies/keyloggers.png"
+dest_files=[ "res://.import/keyloggers.png-73cdd008202addb947c5876a026ddee2.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
