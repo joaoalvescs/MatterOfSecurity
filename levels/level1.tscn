@@ -33,14 +33,14 @@ animations = [ {
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 } ]
 
@@ -291,6 +291,7 @@ shape = SubResource( 6 )
 position = Vector2( 1.48422, -51.2665 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
@@ -308,6 +309,7 @@ shape = SubResource( 6 )
 position = Vector2( 706.527, -243.071 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
@@ -325,7 +327,6 @@ shape = SubResource( 6 )
 position = Vector2( 2.86432, -401.745 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
@@ -343,7 +344,6 @@ shape = SubResource( 6 )
 position = Vector2( 1153.13, -20.8822 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
@@ -361,6 +361,7 @@ shape = SubResource( 6 )
 position = Vector2( 698.95, -36.8984 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 

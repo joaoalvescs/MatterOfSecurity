@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Virtual Jumpers"
-run/main_scene="res://levels/level1.tscn"
+run/main_scene="res://levels/level2.tscn"
 boot_splash/bg_color=Color( 0.141176, 0.141176, 0.141176, 1 )
 config/icon="res://icon.png"
 

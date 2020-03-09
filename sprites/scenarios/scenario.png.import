@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/scanario.png-f343c3b420e073723f4e0ee877118d65.stex"
+path="res://.import/scenario.png-0bb4f836dfc3d17b5575129b88d1a8bf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/scenarios/scanario.png"
-dest_files=[ "res://.import/scanario.png-f343c3b420e073723f4e0ee877118d65.stex" ]
+source_file="res://sprites/scenarios/scenario.png"
+dest_files=[ "res://.import/scenario.png-0bb4f836dfc3d17b5575129b88d1a8bf.stex" ]
 
 [params]
 
