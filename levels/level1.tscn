@@ -1,42 +1,41 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=29 format=2]
 
-[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://sprites/run/run1.png" type="Texture" id=2]
-[ext_resource path="res://scenes/grass.tres" type="TileSet" id=3]
-[ext_resource path="res://sprites/run/run2.png" type="Texture" id=4]
-[ext_resource path="res://sprites/conditions/idle.png" type="Texture" id=5]
+[ext_resource path="res://scenes/grass.tres" type="TileSet" id=1]
+[ext_resource path="res://scenes/grass2.tres" type="TileSet" id=2]
+[ext_resource path="res://scenes/special_tree.tres" type="TileSet" id=3]
+[ext_resource path="res://sprites/scenarios/scenario2.png" type="Texture" id=4]
+[ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=5]
 [ext_resource path="res://sprites/conditions/jump.png" type="Texture" id=6]
 [ext_resource path="res://sprites/run/run0.png" type="Texture" id=7]
-[ext_resource path="res://scenes/special_tree.tres" type="TileSet" id=8]
-[ext_resource path="res://sprites/scenarios/scenario2.png" type="Texture" id=9]
-[ext_resource path="res://scenes/grass2.tres" type="TileSet" id=10]
-[ext_resource path="res://scripts/enemy.gd" type="Script" id=11]
-[ext_resource path="res://scripts/Dica.gd" type="Script" id=12]
-[ext_resource path="res://scripts/Balao.gd" type="Script" id=13]
-[ext_resource path="res://scenes/Balao/Balao.tscn" type="PackedScene" id=14]
-[ext_resource path="res://sprites/buttons/left.png" type="Texture" id=19]
-[ext_resource path="res://sprites/buttons/right.png" type="Texture" id=20]
-[ext_resource path="res://sprites/buttons/up.png" type="Texture" id=21]
-[ext_resource path="res://sprites/enemies/spam1.png" type="Texture" id=22]
-[ext_resource path="res://sprites/enemies/spam2.png" type="Texture" id=23]
-[ext_resource path="res://sprites/enemies/backdoor.png" type="Texture" id=24]
-[ext_resource path="res://levels/backdoor.gd" type="Script" id=25]
+[ext_resource path="res://sprites/run/run1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/run/run2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/conditions/idle.png" type="Texture" id=10]
+[ext_resource path="res://sprites/buttons/left.png" type="Texture" id=11]
+[ext_resource path="res://sprites/buttons/right.png" type="Texture" id=12]
+[ext_resource path="res://sprites/buttons/up.png" type="Texture" id=13]
+[ext_resource path="res://levels/backdoor.gd" type="Script" id=14]
+[ext_resource path="res://sprites/enemies/backdoor.png" type="Texture" id=15]
+[ext_resource path="res://scripts/enemy.gd" type="Script" id=16]
+[ext_resource path="res://sprites/enemies/spam1.png" type="Texture" id=17]
+[ext_resource path="res://sprites/enemies/spam2.png" type="Texture" id=18]
+[ext_resource path="res://scripts/Dica.gd" type="Script" id=19]
+[ext_resource path="res://scenes/Balao/Balao.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 7 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "Jump",
 "speed": 5.0
 } ]
 
@@ -46,70 +45,74 @@ extents = Vector2( 33, 41.3239 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 26.7232, 2.49387 )
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 45.5029, 37.7769 )
-
-[sub_resource type="SpriteFrames" id=5]
-animations = [ {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "move",
-"speed": 2.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 55.1941, 61.8511 )
-
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 217.955, 82.6879 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ ExtResource( 24 ) ],
+"frames": [ ExtResource( 15 ) ],
 "loop": false,
 "name": "move",
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 45.5029, 37.7769 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
+"loop": true,
+"name": "move",
+"speed": 2.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 53.98, 25.059 )
+
 [node name="Mundo" type="Node"]
 
 [node name="grass" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
+tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 851968, 0, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 1, 0, 851993, 1, 0, 851994, 1, 0, 851995, 1, 0, 851996, 1, 0, 851997, 1, 0, 851998, 1, 0, 851999, 1, 0, 852000, 1, 0, 852001, 1, 0, 852002, 1, 0, 852003, 1, 0, 852004, 1, 0, 852005, 1, 0, 852006, 1, 0, 852007, 1, 0, 852008, 1, 0, 852009, 1, 0, 852010, 1, 0, 852011, 1, 0, 852012, 1, 0, 852013, 1, 0, 852014, 1, 0, 852015, 1, 0, 852016, 1, 0, 852017, 1, 0, 852018, 1, 0, 852019, 1, 0, 852020, 1, 0, 852021, 1, 0, 852022, 1, 0, 852023, 1, 0, 852024, 1, 0, 852025, 1, 0, 852026, 1, 0, 852027, 1, 0, 852028, 1, 0, 852029, 1, 0, 852030, 1, 0, 852031, 1, 0, 852032, 1, 0, 852033, 1, 0, 852034, 1, 0, 852035, 1, 0, 852036, 1, 0, 852037, 1, 0, 852038, 1, 0, 852039, 1, 0, 852040, 1, 0, 852041, 1, 0, 852042, 1, 0, 852043, 1, 0, 852044, 1, 0, 852045, 1, 0, 852046, 1, 0, 852047, 1, 0, 852048, 1, 0, 852049, 1, 0, 852050, 1, 0, 852051, 1, 0, 852052, 1, 0, 852053, 1, 0, 852054, 1, 0, 852055, 1, 0, 852056, 1, 0, 852057, 1, 0, 852058, 1, 0, 852059, 1, 0, 852060, 2, 0, 917504, 3, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 4, 0, 917509, 4, 0, 917510, 4, 0, 917511, 4, 0, 917512, 4, 0, 917513, 4, 0, 917514, 4, 0, 917515, 4, 0, 917516, 4, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 4, 0, 917522, 4, 0, 917523, 4, 0, 917524, 4, 0, 917525, 4, 0, 917526, 4, 0, 917527, 3, 0, 917528, 3, 0, 917529, 3, 0, 917530, 3, 0, 917531, 3, 0, 917532, 4, 0, 917533, 4, 0, 917534, 5, 0, 917535, 3, 0, 917536, 3, 0, 917537, 3, 0, 917538, 3, 0, 917539, 3, 0, 917540, 3, 0, 917541, 3, 0, 917542, 3, 0, 917543, 3, 0, 917544, 3, 0, 917545, 3, 0, 917546, 3, 0, 917547, 3, 0, 917548, 3, 0, 917549, 3, 0, 917550, 3, 0, 917551, 3, 0, 917552, 3, 0, 917553, 3, 0, 917554, 536870915, 0, 917555, 4, 0, 917556, 3, 0, 917557, 3, 0, 917558, 3, 0, 917559, 3, 0, 917560, 3, 0, 917561, 3, 0, 917562, 3, 0, 917563, 3, 0, 917564, 3, 0, 917565, 3, 0, 917566, 3, 0, 917567, 3, 0, 917568, 3, 0, 917569, 3, 0, 917570, 3, 0, 917571, 3, 0, 917572, 3, 0, 917573, 3, 0, 917574, 3, 0, 917575, 3, 0, 917576, 3, 0, 917577, 4, 0, 917578, 4, 0, 917579, 4, 0, 917580, 3, 0, 917581, 3, 0, 917582, 3, 0, 917583, 3, 0, 917584, 3, 0, 917585, 3, 0, 917586, 3, 0, 917587, 3, 0, 917588, 3, 0, 917589, 3, 0, 917590, 3, 0, 917591, 3, 0, 917592, 3, 0, 917593, 3, 0, 917594, 3, 0, 917595, 3, 0, 917596, 3, 0 )
 
 [node name="grass2" type="TileMap" parent="."]
 position = Vector2( 1, -1 )
-tile_set = ExtResource( 10 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 32, 32 )
 cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
 format = 1
 tile_data = PoolIntArray( -393193, 0, 0, -393192, 1, 0, -393191, 1, 0, -393190, 1, 0, -393189, 1, 0, -393188, 2, 0, -393182, 0, 0, -393181, 1, 0, -393180, 1, 0, -393179, 1, 0, -393178, 2, 0, -393170, 0, 0, -393169, 1, 0, -393168, 1, 0, -393167, 1, 0, -393166, 1, 0, -393165, 2, 0, -262076, 0, 0, -262075, 1, 0, -262074, 1, 0, -262073, 1, 0, -262072, 2, 0, -131058, 0, 0, -131057, 1, 0, -131056, 1, 0, -131055, 1, 0, -131054, 536870912, 0, -131014, 0, 0, -131013, 1, 0, -131012, 1, 0, -131011, 1, 0, -131010, 1, 0, -131009, 1, 0, -131008, 2, 0, -65491, 536870914, 0, -65490, 536870913, 0, -65489, 1, 0, -65488, 1, 0, -65487, 1, 0, -65486, 1, 0, -65485, 1, 0, -65484, 2, 0, 24, 0, 0, 25, 1, 0, 26, 2, 0, 131104, 0, 0, 131105, 1, 0, 131106, 1, 0, 131107, 1, 0, 131108, 1, 0, 131109, 1, 0, 131110, 1, 0, 131111, 1, 0, 131112, 2, 0, 131146, 536870914, 0, 131147, 536870913, 0, 131148, 536870913, 0, 131149, 536870913, 0, 131150, 536870913, 0, 131151, 536870912, 0, 196619, 0, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 2, 0, 327703, 0, 0, 327704, 1, 0, 327705, 1, 0, 327706, 1, 0, 327707, 1, 0, 327708, 2, 0, 327725, 0, 0, 327726, 1, 0, 327727, 1, 0, 327728, 1, 0, 327729, 1, 0, 327730, 1, 0, 327731, 1, 0, 327732, 1, 0, 327733, 2, 0, 393275, 0, 0, 393276, 1, 0, 393277, 1, 0, 393278, 1, 0, 393279, 1, 0, 393280, 1, 0, 393281, 1, 0, 393282, 1, 0, 393283, 1, 0, 393284, 1, 0, 393285, 2, 0, 524320, 0, 0, 524321, 1, 0, 524322, 1, 0, 524323, 1, 0, 524324, 1, 0, 524325, 1, 0, 524326, 1, 0, 524327, 1, 0, 524328, 1, 0, 524329, 1, 0, 524330, 2, 0, 589838, 0, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 2, 0, 589897, 536870914, 0, 589898, 536870913, 0, 589899, 536870913, 0, 589900, 536870913, 0, 589901, 536870913, 0, 589902, 536870913, 0, 589903, 536870913, 0, 589904, 536870913, 0, 589905, 536870912, 0 )
 
 [node name="special_tree" type="TileMap" parent="."]
-tile_set = ExtResource( 8 )
+tile_set = ExtResource( 3 )
 cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( 327681, 0, 0, 327764, 536870912, 0 )
 
 [node name="parallax_background1" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background1"]
 
 [node name="Sprite" type="Sprite" parent="parallax_background1/ParallaxLayer"]
 position = Vector2( 1472.93, -50.426 )
 scale = Vector2( 0.995444, 1.02642 )
-texture = ExtResource( 9 )
+texture = ExtResource( 4 )
 
 [node name="parallax_background2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background2"]
 position = Vector2( 0, -1 )
 
 [node name="player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 288, 32 )
-script = ExtResource( 1 )
+collision_mask = 9
+script = ExtResource( 5 )
 
 [node name="Sprite" type="AnimatedSprite" parent="player"]
 position = Vector2( -71, 263 )
@@ -142,285 +145,307 @@ position = Vector2( -21.2126, 387.868 )
 shape = SubResource( 3 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="gamepad" type="Node2D" parent="Hud"]
 
 [node name="left" type="TouchScreenButton" parent="Hud/gamepad"]
 position = Vector2( 43.3594, 423.871 )
 scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 19 )
+normal = ExtResource( 11 )
 action = "ui_left"
 
 [node name="right" type="TouchScreenButton" parent="Hud/gamepad"]
 position = Vector2( 129.714, 423.473 )
 scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 20 )
+normal = ExtResource( 12 )
 action = "ui_right"
 
 [node name="up" type="TouchScreenButton" parent="Hud/gamepad"]
 position = Vector2( 627.121, 410.048 )
 scale = Vector2( 0.25, 0.25 )
-normal = ExtResource( 21 )
+normal = ExtResource( 13 )
 action = "ui_up"
 
-[node name="spam" type="StaticBody2D" parent="."]
-position = Vector2( 737.411, 162.246 )
-collision_layer = 4
-script = ExtResource( 11 )
+[node name="backdoor" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="Shape" type="CollisionShape2D" parent="spam"]
-position = Vector2( 26.062, -26.7076 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam"]
-position = Vector2( 1.48422, -51.2665 )
-frames = SubResource( 5 )
-animation = "move"
-playing = true
-centered = false
-
-[node name="Dica" type="Area2D" parent="spam"]
-collision_layer = 8
-collision_mask = 0
-script = ExtResource( 12 )
-width = 700
-height = 400
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="spam/Dica"]
-position = Vector2( -340.391, 235.813 )
-shape = SubResource( 9 )
-
-[node name="Balao" type="Node2D" parent="spam/Dica" instance=ExtResource( 14 )]
-visible = false
-position = Vector2( 0.25, -0.0220642 )
-script = ExtResource( 13 )
-__meta__ = {
-"_edit_group_": true
-}
-width = 700
-height = 400
-
-[node name="Tween" type="Tween" parent="spam/Dica"]
-
-[node name="spam2" type="StaticBody2D" parent="."]
-position = Vector2( 737.411, 162.246 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam2"]
-position = Vector2( 730.817, -213.433 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam2"]
-position = Vector2( 706.527, -243.071 )
-frames = SubResource( 5 )
-animation = "move"
-playing = true
-centered = false
-
-[node name="spam3" type="StaticBody2D" parent="."]
-position = Vector2( 737.411, 162.246 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam3"]
-position = Vector2( 27.9238, -373.687 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam3"]
-position = Vector2( 2.86432, -401.745 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 1
-playing = true
-centered = false
-
-[node name="spam4" type="StaticBody2D" parent="."]
-position = Vector2( 737.411, 162.246 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam4"]
-position = Vector2( 1175.31, 8.92175 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam4"]
-position = Vector2( 1153.13, -20.8822 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 1
-playing = true
-centered = false
-
-[node name="spam5" type="StaticBody2D" parent="."]
-position = Vector2( 742.728, 150.553 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam5"]
-position = Vector2( 722.786, -7.96573 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam5"]
-position = Vector2( 698.95, -36.8984 )
-frames = SubResource( 5 )
-animation = "move"
-playing = true
-centered = false
-
-[node name="spam6" type="StaticBody2D" parent="."]
-position = Vector2( 742.728, 150.553 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam6"]
-position = Vector2( -268.662, -232.209 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam6"]
-position = Vector2( -293.409, -263.373 )
-frames = SubResource( 5 )
-animation = "move"
-frame = 1
-playing = true
-centered = false
-
-[node name="spam7" type="StaticBody2D" parent="."]
-position = Vector2( 747.045, 498.067 )
-collision_layer = 4
-script = ExtResource( 11 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam7"]
-position = Vector2( -268.662, -232.209 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam7"]
-position = Vector2( -294.142, -261.5 )
-frames = SubResource( 5 )
-animation = "move"
-playing = true
-centered = false
-
-[node name="backdoor" type="StaticBody2D" parent="."]
+[node name="backdoor" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor"]
 position = Vector2( 152.338, -268.188 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor"]
 position = Vector2( 152.3, -267.721 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="Area2D" type="Area2D" parent="backdoor"]
+[node name="Area2D" type="Area2D" parent="backdoor/backdoor"]
 
-[node name="backdoor2" type="StaticBody2D" parent="."]
+[node name="backdoor2" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor2"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor2"]
 position = Vector2( 820.479, -107.524 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor2"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor2"]
 position = Vector2( 820.574, -106.848 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="backdoor3" type="StaticBody2D" parent="."]
+[node name="backdoor3" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor3"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor3"]
 position = Vector2( 1655.48, -424.213 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor3"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor3"]
 position = Vector2( 1653.84, -426.509 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="backdoor4" type="StaticBody2D" parent="."]
+[node name="backdoor4" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor4"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor4"]
 position = Vector2( 2135.27, -73.8823 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor4"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor4"]
 position = Vector2( 2135.51, -73.1968 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="backdoor5" type="StaticBody2D" parent="."]
+[node name="backdoor5" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor5"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor5"]
 position = Vector2( 2162.24, -299.19 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor5"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor5"]
 position = Vector2( 2162.19, -299.685 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="backdoor6" type="StaticBody2D" parent="."]
+[node name="backdoor6" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor6"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor6"]
 position = Vector2( 817.088, -295.866 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor6"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor6"]
 position = Vector2( 817.476, -297.122 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
 
-[node name="backdoor7" type="StaticBody2D" parent="."]
+[node name="backdoor7" type="StaticBody2D" parent="backdoor"]
+editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
-script = ExtResource( 25 )
+script = ExtResource( 14 )
 
-[node name="Shape" type="CollisionShape2D" parent="backdoor7"]
+[node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor7"]
 position = Vector2( 1267.7, -554.494 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 7 )
 
-[node name="Sprite" type="AnimatedSprite" parent="backdoor7"]
+[node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor7"]
 position = Vector2( 1270.42, -554.136 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 8 )
 animation = "move"
+
+[node name="spam" type="Node" parent="."]
+editor/display_folded = true
+
+[node name="spam" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam"]
+position = Vector2( 26.062, -26.7076 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam"]
+position = Vector2( 1.48422, -51.2665 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="spam2" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam2"]
+position = Vector2( 730.817, -213.433 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam2"]
+position = Vector2( 706.527, -243.071 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="spam3" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam3"]
+position = Vector2( 27.9238, -373.687 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam3"]
+position = Vector2( 2.86432, -401.745 )
+frames = SubResource( 5 )
+animation = "move"
+playing = true
+centered = false
+
+[node name="spam4" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 737.411, 162.246 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam4"]
+position = Vector2( 1175.31, 8.92175 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam4"]
+position = Vector2( 1153.13, -20.8822 )
+frames = SubResource( 5 )
+animation = "move"
+playing = true
+centered = false
+
+[node name="spam5" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 742.728, 150.553 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam5"]
+position = Vector2( 722.786, -7.96573 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam5"]
+position = Vector2( 698.95, -36.8984 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="spam6" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 742.728, 150.553 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam6"]
+position = Vector2( -268.662, -232.209 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam6"]
+position = Vector2( -293.409, -263.373 )
+frames = SubResource( 5 )
+animation = "move"
+playing = true
+centered = false
+
+[node name="spam7" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
+position = Vector2( 747.045, 498.067 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam7"]
+position = Vector2( -268.662, -232.209 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 4 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam7"]
+position = Vector2( -294.142, -261.5 )
+frames = SubResource( 5 )
+animation = "move"
+frame = 1
+playing = true
+centered = false
+
+[node name="Dica" type="Area2D" parent="."]
+editor/display_folded = true
+position = Vector2( 737.411, 162.246 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+width = 500
+height = 250
+texto = "Nao tem nada de errado com a dica"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica"]
+position = Vector2( -212.836, 212.343 )
+shape = SubResource( 6 )
+
+[node name="Balao" parent="Dica" instance=ExtResource( 20 )]
+visible = false
+width = 500
+height = 250
+texto = "Nao tem nada de errado com a dica"
+size = 25
+
+[node name="Tween" type="Tween" parent="Dica"]
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]
-[connection signal="body_entered" from="spam/Dica" to="spam/Dica" method="_on_Dica_body_entered"]
-[connection signal="body_exited" from="spam/Dica" to="spam/Dica" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica" to="Dica" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica" to="Dica" method="_on_Dica_body_exited"]
