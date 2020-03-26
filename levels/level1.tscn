@@ -5,11 +5,11 @@
 [ext_resource path="res://scenes/special_tree.tres" type="TileSet" id=3]
 [ext_resource path="res://sprites/scenarios/scenario2.png" type="Texture" id=4]
 [ext_resource path="res://scripts/KinematicBody2D.gd" type="Script" id=5]
-[ext_resource path="res://sprites/conditions/jump.png" type="Texture" id=6]
-[ext_resource path="res://sprites/run/run0.png" type="Texture" id=7]
-[ext_resource path="res://sprites/run/run1.png" type="Texture" id=8]
-[ext_resource path="res://sprites/run/run2.png" type="Texture" id=9]
-[ext_resource path="res://sprites/conditions/idle.png" type="Texture" id=10]
+[ext_resource path="res://sprites/run/run0.png" type="Texture" id=6]
+[ext_resource path="res://sprites/run/run1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/run/run2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/conditions/idle.png" type="Texture" id=9]
+[ext_resource path="res://sprites/conditions/jump.png" type="Texture" id=10]
 [ext_resource path="res://sprites/buttons/left.png" type="Texture" id=11]
 [ext_resource path="res://sprites/buttons/right.png" type="Texture" id=12]
 [ext_resource path="res://sprites/buttons/up.png" type="Texture" id=13]
@@ -23,19 +23,19 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "Run",
 "speed": 5.0
 } ]
 
@@ -102,11 +102,13 @@ scale = Vector2( 0.995444, 1.02642 )
 texture = ExtResource( 4 )
 
 [node name="parallax_background2" type="ParallaxBackground" parent="."]
+editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background2"]
 position = Vector2( 0, -1 )
 
 [node name="player" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 288, 32 )
 collision_mask = 9
 script = ExtResource( 5 )
@@ -142,6 +144,7 @@ position = Vector2( -21.2126, 387.868 )
 shape = SubResource( 3 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="gamepad" type="Node2D" parent="Hud"]
 
@@ -280,6 +283,7 @@ frames = SubResource( 5 )
 animation = "move"
 
 [node name="spam" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="spam" type="StaticBody2D" parent="spam"]
 position = Vector2( 737.411, 162.246 )
@@ -295,7 +299,6 @@ shape = SubResource( 6 )
 position = Vector2( -0.975559, -45.1833 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
@@ -313,7 +316,6 @@ shape = SubResource( 6 )
 position = Vector2( 706.527, -243.071 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
@@ -331,6 +333,7 @@ shape = SubResource( 6 )
 position = Vector2( 2.86432, -401.745 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
@@ -348,11 +351,13 @@ shape = SubResource( 6 )
 position = Vector2( 1153.13, -20.8822 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
 [node name="spam5" type="StaticBody2D" parent="spam"]
-position = Vector2( 742.728, 150.553 )
+editor/display_folded = true
+position = Vector2( 743.728, 150.553 )
 collision_layer = 4
 script = ExtResource( 16 )
 
@@ -365,11 +370,11 @@ shape = SubResource( 6 )
 position = Vector2( 698.95, -36.8984 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
 [node name="spam6" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
 position = Vector2( 665.886, 255.816 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -383,10 +388,12 @@ shape = SubResource( 6 )
 position = Vector2( -215.027, -367.599 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
 [node name="spam7" type="StaticBody2D" parent="spam"]
+editor/display_folded = true
 position = Vector2( 747.045, 498.067 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -400,25 +407,28 @@ shape = SubResource( 6 )
 position = Vector2( -294.142, -261.5 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
 [node name="Dica_spam" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 737.411, 162.246 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 width = 500
 height = 250
 texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam"]
-position = Vector2( -62.9263, 103.066 )
+position = Vector2( -301.096, 228.032 )
 shape = SubResource( 8 )
 
 [node name="Balao" parent="Dica_spam" instance=ExtResource( 20 )]
-visible = false
+position = Vector2( -42.3853, 64.666 )
 width = 500
 height = 250
 texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
@@ -426,23 +436,27 @@ texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebe
 [node name="Tween" type="Tween" parent="Dica_spam"]
 
 [node name="Dica_spam2" type="Area2D" parent="."]
-position = Vector2( 737.411, 162.246 )
+editor/display_folded = true
+position = Vector2( 1143.18, -258.227 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
 width = 500
 height = 250
-texto = "O primeiro registro da prática de SPAM pode ter sido em 1978, quando o funcionário de uma empresa de computadores, a DEC, achou que todos os usuários da Arpanet estariam interessadosem receber informações sobre o lançamento da empresa — o DEC 20."
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam2"]
-position = Vector2( 212.126, -20.8239 )
+position = Vector2( -301.096, 228.032 )
 shape = SubResource( 8 )
 
 [node name="Balao" parent="Dica_spam2" instance=ExtResource( 20 )]
-visible = false
+position = Vector2( -42.3853, 64.666 )
 width = 500
 height = 250
-texto = "O primeiro registro da prática de SPAM pode ter sido em 1978, quando o funcionário de uma empresa de computadores, a DEC, achou que todos os usuários da Arpanet estariam interessadosem receber informações sobre o lançamento da empresa — o DEC 20."
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
 
 [node name="Tween" type="Tween" parent="Dica_spam2"]
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]

@@ -16,7 +16,8 @@ signal escondendo
 signal escondeu
 
 func _ready():
-	get_node("Balao").hide()
+	if !Engine.editor_hint:
+		get_node("Balao").hide()
 	pass	
 		
 func _draw():
