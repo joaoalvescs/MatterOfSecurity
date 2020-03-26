@@ -23,11 +23,6 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "Run",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
 "name": "Idle",
@@ -36,6 +31,11 @@ animations = [ {
 "frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "Run",
 "speed": 5.0
 } ]
 
@@ -68,7 +68,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 23.41, 25.059 )
+extents = Vector2( 40.99, 25.059 )
 
 [node name="Mundo" type="Node"]
 
@@ -97,18 +97,16 @@ tile_data = PoolIntArray( 327681, 0, 0, 327764, 536870912, 0 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background1"]
 
 [node name="Sprite" type="Sprite" parent="parallax_background1/ParallaxLayer"]
-position = Vector2( 1482.18, -50.426 )
+position = Vector2( 1483.47, -49.5686 )
 scale = Vector2( 0.995444, 1.02642 )
 texture = ExtResource( 4 )
 
 [node name="parallax_background2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background2"]
 position = Vector2( 0, -1 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 288, 32 )
 collision_mask = 9
 script = ExtResource( 5 )
@@ -144,7 +142,6 @@ position = Vector2( -21.2126, 387.868 )
 shape = SubResource( 3 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="gamepad" type="Node2D" parent="Hud"]
 
@@ -184,20 +181,18 @@ scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 5 )
 animation = "move"
 
-[node name="Area2D" type="Area2D" parent="backdoor/backdoor"]
-
 [node name="backdoor2" type="StaticBody2D" parent="backdoor"]
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
 
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor2"]
-position = Vector2( 820.479, -107.524 )
+position = Vector2( 952.652, -104.598 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor2"]
-position = Vector2( 820.574, -106.848 )
+position = Vector2( 952.53, -105.488 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 5 )
 animation = "move"
@@ -224,12 +219,12 @@ collision_layer = 4
 script = ExtResource( 14 )
 
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor4"]
-position = Vector2( 2135.27, -73.8823 )
+position = Vector2( 2233.49, -73.8823 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor4"]
-position = Vector2( 2135.51, -73.1968 )
+position = Vector2( 2233.73, -71.9043 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 5 )
 animation = "move"
@@ -256,12 +251,12 @@ collision_layer = 4
 script = ExtResource( 14 )
 
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor6"]
-position = Vector2( 817.088, -295.866 )
+position = Vector2( 926.001, -297.298 )
 scale = Vector2( 0.2, 0.2 )
 shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor6"]
-position = Vector2( 817.476, -297.122 )
+position = Vector2( 924.916, -297.123 )
 scale = Vector2( 0.0708184, 0.0727675 )
 frames = SubResource( 5 )
 animation = "move"
@@ -283,7 +278,6 @@ frames = SubResource( 5 )
 animation = "move"
 
 [node name="spam" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="spam" type="StaticBody2D" parent="spam"]
 position = Vector2( 737.411, 162.246 )
@@ -299,6 +293,7 @@ shape = SubResource( 6 )
 position = Vector2( -0.975559, -45.1833 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
@@ -316,6 +311,7 @@ shape = SubResource( 6 )
 position = Vector2( 706.527, -243.071 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
@@ -333,7 +329,6 @@ shape = SubResource( 6 )
 position = Vector2( 2.86432, -401.745 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
@@ -343,38 +338,36 @@ collision_layer = 4
 script = ExtResource( 16 )
 
 [node name="Shape" type="CollisionShape2D" parent="spam/spam4"]
-position = Vector2( 1175.31, 8.92175 )
+position = Vector2( 1305.55, 10.5508 )
 scale = Vector2( 0.5, 0.5 )
 shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam4"]
-position = Vector2( 1153.13, -20.8822 )
+position = Vector2( 1280.82, -19.558 )
+frames = SubResource( 7 )
+animation = "move"
+playing = true
+centered = false
+
+[node name="spam5" type="StaticBody2D" parent="spam"]
+position = Vector2( 743.728, 150.553 )
+collision_layer = 4
+script = ExtResource( 16 )
+
+[node name="Shape" type="CollisionShape2D" parent="spam/spam5"]
+position = Vector2( 882.576, -5.63306 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="AnimatedSprite" parent="spam/spam5"]
+position = Vector2( 859.906, -36.8984 )
 frames = SubResource( 7 )
 animation = "move"
 frame = 1
 playing = true
 centered = false
 
-[node name="spam5" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
-position = Vector2( 743.728, 150.553 )
-collision_layer = 4
-script = ExtResource( 16 )
-
-[node name="Shape" type="CollisionShape2D" parent="spam/spam5"]
-position = Vector2( 722.786, -7.96573 )
-scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 6 )
-
-[node name="Sprite" type="AnimatedSprite" parent="spam/spam5"]
-position = Vector2( 698.95, -36.8984 )
-frames = SubResource( 7 )
-animation = "move"
-playing = true
-centered = false
-
 [node name="spam6" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 665.886, 255.816 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -388,12 +381,10 @@ shape = SubResource( 6 )
 position = Vector2( -215.027, -367.599 )
 frames = SubResource( 7 )
 animation = "move"
-frame = 1
 playing = true
 centered = false
 
 [node name="spam7" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 747.045, 498.067 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -407,12 +398,12 @@ shape = SubResource( 6 )
 position = Vector2( -294.142, -261.5 )
 frames = SubResource( 7 )
 animation = "move"
+frame = 1
 playing = true
 centered = false
 
 [node name="Dica_spam" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 737.411, 162.246 )
+position = Vector2( 636.743, 162.246 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 19 )
@@ -421,7 +412,7 @@ __meta__ = {
 }
 width = 500
 height = 250
-texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar. Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestacão de desejo ou interesse."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam"]
 position = Vector2( -301.096, 228.032 )
@@ -431,13 +422,12 @@ shape = SubResource( 8 )
 position = Vector2( -42.3853, 64.666 )
 width = 500
 height = 250
-texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar. Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestacão de desejo ou interesse."
 
 [node name="Tween" type="Tween" parent="Dica_spam"]
 
 [node name="Dica_spam2" type="Area2D" parent="."]
-editor/display_folded = true
-position = Vector2( 1143.18, -258.227 )
+position = Vector2( 1118.81, -249.202 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 19 )
@@ -446,7 +436,7 @@ __meta__ = {
 }
 width = 500
 height = 250
-texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
+texto = "O primeiro SPAM foi em 1978, um funcionário de uma empresa de computadores, a DEC, achou que os usuários da ARPANET estavam interessados em saber o lançamento de um produto: o DEC 20. Usando um sistema de disparo em massa, ele enviou a propaganda para todos. E claro, não foi bem recebido."
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam2"]
 position = Vector2( -301.096, 228.032 )
@@ -456,11 +446,167 @@ shape = SubResource( 8 )
 position = Vector2( -42.3853, 64.666 )
 width = 500
 height = 250
-texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
+texto = "O primeiro SPAM foi em 1978, um funcionário de uma empresa de computadores, a DEC, achou que os usuários da ARPANET estavam interessados em saber o lançamento de um produto: o DEC 20. Usando um sistema de disparo em massa, ele enviou a propaganda para todos. E claro, não foi bem recebido."
 
 [node name="Tween" type="Tween" parent="Dica_spam2"]
+
+[node name="Dica_spam3" type="Area2D" parent="."]
+position = Vector2( 2243.36, -62.9156 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "Conteúdos ofensivos podem gerar constrangimento, ou, ainda pior, formas de confundir o receptor e forcá-lo a acessar itens maliciosos, como links ou arquivos. E, consequentemente, contaminar seus computadores com vírus e outras formas de invasão."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam3"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_spam3" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "Conteúdos ofensivos podem gerar constrangimento, ou, ainda pior, formas de confundir o receptor e forcá-lo a acessar itens maliciosos, como links ou arquivos. E, consequentemente, contaminar seus computadores com vírus e outras formas de invasão."
+
+[node name="Tween" type="Tween" parent="Dica_spam3"]
+
+[node name="Dica_spam4" type="Area2D" parent="."]
+position = Vector2( 1795.07, -89.3537 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "Se você utiliza serviços de e-mail de grandes provedores, como Gmail, Outlook e Yahoo! sempre classifique mensagens indesejadas como “SPAM”. Não abra mensagens de remetentes desconhecidos ou que considerar suspeitos."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam4"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_spam4" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "Se você utiliza serviços de e-mail de grandes provedores, como Gmail, Outlook e Yahoo! sempre classifique mensagens indesejadas como “SPAM”. Não abra mensagens de remetentes desconhecidos ou que considerar suspeitos."
+
+[node name="Tween" type="Tween" parent="Dica_spam4"]
+
+[node name="Dica_backdoor" type="Area2D" parent="."]
+position = Vector2( 1917.64, -445.32 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "O backdoor tem como finalidade o controle de um único computador. Este tipo de ataque é um dos mais prejudiciais aos usuários, já que, de certa forma, todos os arquivos poderão ser acessados pelo criminoso virtual de forma remota."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_backdoor"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_backdoor" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "O backdoor tem como finalidade o controle de um único computador. Este tipo de ataque é um dos mais prejudiciais aos usuários, já que, de certa forma, todos os arquivos poderão ser acessados pelo criminoso virtual de forma remota."
+
+[node name="Tween" type="Tween" parent="Dica_backdoor"]
+
+[node name="Dica_backdoor2" type="Area2D" parent="."]
+position = Vector2( 2670.77, 41.2292 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "Além de ter acesso aos arquivos, os crackers também podem controlar funções do computador infectado. Há relatos de conseguirem ligar e desligar a webcam, microfone e drives de cd. "
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_backdoor2"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_backdoor2" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "Além de ter acesso aos arquivos, os crackers também podem controlar funções do computador infectado. Há relatos de conseguirem ligar e desligar a webcam, microfone e drives de cd. "
+
+[node name="Tween" type="Tween" parent="Dica_backdoor2"]
+
+[node name="Dica_backdoor3" type="Area2D" parent="."]
+position = Vector2( 1370.11, -186.384 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "Outra forma bastante comum é através de programas de acesso remoto (VNC, TeamViewer, NetBus, etc).  Quando instalados sem o consentimento do usuário ou mal configurados, também podem ser considerados backdoors."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_backdoor3"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_backdoor3" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "Outra forma bastante comum é através de programas de acesso remoto (VNC, TeamViewer, NetBus, etc).  Quando instalados sem o consentimento do usuário ou mal configurados, também podem ser considerados backdoors."
+
+[node name="Tween" type="Tween" parent="Dica_backdoor3"]
+
+[node name="Dica_backdoor4" type="Area2D" parent="."]
+position = Vector2( 1368.69, 6.30342 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_group_": true
+}
+width = 500
+height = 250
+texto = "Como se prevenir: Ative o Firewall ele cria uma barreira entre o PC e o ataque de hackers pela internet.  Evite também clicar em links desconhecidos: seja por e-mail, através de banners ou pelas redes sociais, é sempre bom evitar clicar em links desconhecidos."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_backdoor4"]
+position = Vector2( -301.096, 228.032 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_backdoor4" instance=ExtResource( 20 )]
+position = Vector2( -42.3853, 64.666 )
+width = 500
+height = 250
+texto = "Como se prevenir: Ative o Firewall ele cria uma barreira entre o PC e o ataque de hackers pela internet.  Evite também clicar em links desconhecidos: seja por e-mail, através de banners ou pelas redes sociais, é sempre bom evitar clicar em links desconhecidos."
+
+[node name="Tween" type="Tween" parent="Dica_backdoor4"]
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]
 [connection signal="body_entered" from="Dica_spam" to="Dica_spam" method="_on_Dica_body_entered"]
 [connection signal="body_exited" from="Dica_spam" to="Dica_spam" method="_on_Dica_body_exited"]
 [connection signal="body_entered" from="Dica_spam2" to="Dica_spam2" method="_on_Dica_body_entered"]
 [connection signal="body_exited" from="Dica_spam2" to="Dica_spam2" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_spam3" to="Dica_spam3" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_spam3" to="Dica_spam3" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_spam4" to="Dica_spam4" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_spam4" to="Dica_spam4" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_backdoor" to="Dica_backdoor" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_backdoor" to="Dica_backdoor" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_backdoor2" to="Dica_backdoor2" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_backdoor2" to="Dica_backdoor2" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_backdoor3" to="Dica_backdoor3" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_backdoor3" to="Dica_backdoor3" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_backdoor4" to="Dica_backdoor4" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_backdoor4" to="Dica_backdoor4" method="_on_Dica_body_exited"]
