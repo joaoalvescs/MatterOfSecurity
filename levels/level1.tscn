@@ -23,6 +23,11 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "Jump",
@@ -32,11 +37,6 @@ animations = [ {
 "loop": true,
 "name": "Run",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -45,10 +45,10 @@ extents = Vector2( 33, 41.3239 )
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 26.7232, 2.49387 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 217.955, 82.6879 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 15 ) ],
 "loop": false,
@@ -56,10 +56,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 45.5029, 37.7769 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 18 ) ],
 "loop": true,
@@ -67,8 +67,8 @@ animations = [ {
 "speed": 2.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 53.98, 25.059 )
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 23.41, 25.059 )
 
 [node name="Mundo" type="Node"]
 
@@ -93,23 +93,20 @@ format = 1
 tile_data = PoolIntArray( 327681, 0, 0, 327764, 536870912, 0 )
 
 [node name="parallax_background1" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background1"]
 
 [node name="Sprite" type="Sprite" parent="parallax_background1/ParallaxLayer"]
-position = Vector2( 1472.93, -50.426 )
+position = Vector2( 1482.18, -50.426 )
 scale = Vector2( 0.995444, 1.02642 )
 texture = ExtResource( 4 )
 
 [node name="parallax_background2" type="ParallaxBackground" parent="."]
-editor/display_folded = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="parallax_background2"]
 position = Vector2( 0, -1 )
 
 [node name="player" type="KinematicBody2D" parent="."]
-editor/display_folded = true
 position = Vector2( 288, 32 )
 collision_mask = 9
 script = ExtResource( 5 )
@@ -145,7 +142,6 @@ position = Vector2( -21.2126, 387.868 )
 shape = SubResource( 3 )
 
 [node name="Hud" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="gamepad" type="Node2D" parent="Hud"]
 
@@ -168,10 +164,8 @@ normal = ExtResource( 13 )
 action = "ui_up"
 
 [node name="backdoor" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="backdoor" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -179,18 +173,17 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor"]
 position = Vector2( 152.338, -268.188 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor"]
 position = Vector2( 152.3, -267.721 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="Area2D" type="Area2D" parent="backdoor/backdoor"]
 
 [node name="backdoor2" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -198,16 +191,15 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor2"]
 position = Vector2( 820.479, -107.524 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor2"]
 position = Vector2( 820.574, -106.848 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="backdoor3" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -215,16 +207,15 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor3"]
 position = Vector2( 1655.48, -424.213 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor3"]
 position = Vector2( 1653.84, -426.509 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="backdoor4" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -232,16 +223,15 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor4"]
 position = Vector2( 2135.27, -73.8823 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor4"]
 position = Vector2( 2135.51, -73.1968 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="backdoor5" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -249,16 +239,15 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor5"]
 position = Vector2( 2162.24, -299.19 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor5"]
 position = Vector2( 2162.19, -299.685 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="backdoor6" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -266,16 +255,15 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor6"]
 position = Vector2( 817.088, -295.866 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor6"]
 position = Vector2( 817.476, -297.122 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="backdoor7" type="StaticBody2D" parent="backdoor"]
-editor/display_folded = true
 position = Vector2( 248.71, 345.179 )
 collision_layer = 4
 script = ExtResource( 14 )
@@ -283,38 +271,35 @@ script = ExtResource( 14 )
 [node name="Shape" type="CollisionShape2D" parent="backdoor/backdoor7"]
 position = Vector2( 1267.7, -554.494 )
 scale = Vector2( 0.2, 0.2 )
-shape = SubResource( 7 )
+shape = SubResource( 4 )
 
 [node name="Sprite" type="AnimatedSprite" parent="backdoor/backdoor7"]
 position = Vector2( 1270.42, -554.136 )
 scale = Vector2( 0.0708184, 0.0727675 )
-frames = SubResource( 8 )
+frames = SubResource( 5 )
 animation = "move"
 
 [node name="spam" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="spam" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 737.411, 162.246 )
 collision_layer = 4
 script = ExtResource( 16 )
 
 [node name="Shape" type="CollisionShape2D" parent="spam/spam"]
-position = Vector2( 26.062, -26.7076 )
+position = Vector2( 24.0718, -17.4197 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam"]
-position = Vector2( 1.48422, -51.2665 )
-frames = SubResource( 5 )
+position = Vector2( -0.975559, -45.1833 )
+frames = SubResource( 7 )
 animation = "move"
 frame = 1
 playing = true
 centered = false
 
 [node name="spam2" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 737.411, 162.246 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -322,18 +307,17 @@ script = ExtResource( 16 )
 [node name="Shape" type="CollisionShape2D" parent="spam/spam2"]
 position = Vector2( 730.817, -213.433 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam2"]
 position = Vector2( 706.527, -243.071 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "move"
 frame = 1
 playing = true
 centered = false
 
 [node name="spam3" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 737.411, 162.246 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -341,17 +325,16 @@ script = ExtResource( 16 )
 [node name="Shape" type="CollisionShape2D" parent="spam/spam3"]
 position = Vector2( 27.9238, -373.687 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam3"]
 position = Vector2( 2.86432, -401.745 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "move"
 playing = true
 centered = false
 
 [node name="spam4" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 737.411, 162.246 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -359,17 +342,16 @@ script = ExtResource( 16 )
 [node name="Shape" type="CollisionShape2D" parent="spam/spam4"]
 position = Vector2( 1175.31, 8.92175 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam4"]
 position = Vector2( 1153.13, -20.8822 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "move"
 playing = true
 centered = false
 
 [node name="spam5" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 742.728, 150.553 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -377,36 +359,34 @@ script = ExtResource( 16 )
 [node name="Shape" type="CollisionShape2D" parent="spam/spam5"]
 position = Vector2( 722.786, -7.96573 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam5"]
 position = Vector2( 698.95, -36.8984 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "move"
 frame = 1
 playing = true
 centered = false
 
 [node name="spam6" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
-position = Vector2( 742.728, 150.553 )
+position = Vector2( 665.886, 255.816 )
 collision_layer = 4
 script = ExtResource( 16 )
 
 [node name="Shape" type="CollisionShape2D" parent="spam/spam6"]
-position = Vector2( -268.662, -232.209 )
+position = Vector2( -191.1, -336.364 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam6"]
-position = Vector2( -293.409, -263.373 )
-frames = SubResource( 5 )
+position = Vector2( -215.027, -367.599 )
+frames = SubResource( 7 )
 animation = "move"
 playing = true
 centered = false
 
 [node name="spam7" type="StaticBody2D" parent="spam"]
-editor/display_folded = true
 position = Vector2( 747.045, 498.067 )
 collision_layer = 4
 script = ExtResource( 16 )
@@ -414,38 +394,59 @@ script = ExtResource( 16 )
 [node name="Shape" type="CollisionShape2D" parent="spam/spam7"]
 position = Vector2( -268.662, -232.209 )
 scale = Vector2( 0.5, 0.5 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Sprite" type="AnimatedSprite" parent="spam/spam7"]
 position = Vector2( -294.142, -261.5 )
-frames = SubResource( 5 )
+frames = SubResource( 7 )
 animation = "move"
 frame = 1
 playing = true
 centered = false
 
-[node name="Dica" type="Area2D" parent="."]
-editor/display_folded = true
+[node name="Dica_spam" type="Area2D" parent="."]
 position = Vector2( 737.411, 162.246 )
 collision_layer = 8
 collision_mask = 0
 script = ExtResource( 19 )
 width = 500
 height = 250
-texto = "Nao tem nada de errado com a dica"
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica"]
-position = Vector2( -212.836, 212.343 )
-shape = SubResource( 6 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam"]
+position = Vector2( -62.9263, 103.066 )
+shape = SubResource( 8 )
 
-[node name="Balao" parent="Dica" instance=ExtResource( 20 )]
+[node name="Balao" parent="Dica_spam" instance=ExtResource( 20 )]
 visible = false
 width = 500
 height = 250
-texto = "Nao tem nada de errado com a dica"
-size = 25
+texto = "SPAM é toda mensagem enviada para vários destinatários, que o recebem sem desejar.Ou seja, você não pediu a informação e ela chega até você mesmo sem permissão prévia, ou qualquer manifestação de desejo ou interesse."
 
-[node name="Tween" type="Tween" parent="Dica"]
+[node name="Tween" type="Tween" parent="Dica_spam"]
+
+[node name="Dica_spam2" type="Area2D" parent="."]
+position = Vector2( 737.411, 162.246 )
+collision_layer = 8
+collision_mask = 0
+script = ExtResource( 19 )
+width = 500
+height = 250
+texto = "O primeiro registro da prática de SPAM pode ter sido em 1978, quando o funcionário de uma empresa de computadores, a DEC, achou que todos os usuários da Arpanet estariam interessadosem receber informações sobre o lançamento da empresa — o DEC 20."
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dica_spam2"]
+position = Vector2( 212.126, -20.8239 )
+shape = SubResource( 8 )
+
+[node name="Balao" parent="Dica_spam2" instance=ExtResource( 20 )]
+visible = false
+width = 500
+height = 250
+texto = "O primeiro registro da prática de SPAM pode ter sido em 1978, quando o funcionário de uma empresa de computadores, a DEC, achou que todos os usuários da Arpanet estariam interessadosem receber informações sobre o lançamento da empresa — o DEC 20."
+
+[node name="Tween" type="Tween" parent="Dica_spam2"]
 [connection signal="body_entered" from="player/feet" to="player" method="_on_feet_body_entered"]
-[connection signal="body_entered" from="Dica" to="Dica" method="_on_Dica_body_entered"]
-[connection signal="body_exited" from="Dica" to="Dica" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_spam" to="Dica_spam" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_spam" to="Dica_spam" method="_on_Dica_body_exited"]
+[connection signal="body_entered" from="Dica_spam2" to="Dica_spam2" method="_on_Dica_body_entered"]
+[connection signal="body_exited" from="Dica_spam2" to="Dica_spam2" method="_on_Dica_body_exited"]
